@@ -1,0 +1,17 @@
+{
+  "name": "campo-minado-2021",
+  "version": "1.0.0",
+  "description": "Trabalho Comp 1 - Campo Minado",
+  "main": "main.c",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trabalho-Comp1/campo-minado-2021.git"
+  },
+  "keywords": [],
+  "author": "Diego Matos, Lia Porto, Abid Lohan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trabalho-Comp1/campo-minado-2021/issues"
+  },
+  "homepage": "https://github.com/Trabalho-Comp1/campo-minado-2021#readme"
+}
