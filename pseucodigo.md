@@ -11,11 +11,7 @@
 
 ## Todo:
 
-TODO: Criar função para popular o tabuleiro
-
-TODO: Criar função para desenhar o tabuleiro 
-
-TODO: Criar game loop
+TODO: Pesquisar como alterar os caracteres de ASCII para UTF-8
 
 ```
 struct Game{

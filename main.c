@@ -1,31 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define FACIL 1
-#define MEDIO 2
-#define DIFICIL 3
-
-/*
-Tabuleiro: 
-x - casa nao aberta
-0 - casa aberta sem bomba em volta
-N - casa aberta com N bombas em volta
-
-Acompanhamento:
-0 - Casa aberta
-1 - Casa aberta
-*/
-
-char **criarTabuleiro(int tamanho);
+#include "main.h"
 
 int main()
 {
-  int dificuldadeEscolhida, tamTabuleiro;
-  unsigned int i, j;
-  char **tabuleiro;
-  /* int **controleTabuleiro; */
+  int dificuldadeEscolhida, tamTabuleiro, **tabuleiro,  **tabuleiroEspelho;
+  char GAME_STATE = PLAYING;
 
-  puts("=== JOGO DO CAMPO DO MINADO ===");
-  puts("Qual a dificuldade do jogo?");
+  puts("==== JOGO DO CAMPO DO MINADO ====");
+  puts("Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos");
+  puts("=======================================");
+  puts("Escolha a dificuldade do jogo:");
   puts("[1] - Facil, [2] - Medio, [3] - Dificil, [4] - SAIR");
   scanf("%i", &dificuldadeEscolhida);
 
@@ -47,41 +30,44 @@ int main()
   }
 
   tabuleiro = criarTabuleiro(tamTabuleiro);
+  tabuleiroEspelho = criarTabuleiro(tamTabuleiro);
 
-  /* Popular o tabuleiro */
-  for (i = 0; i < tamTabuleiro; i++)
-  {
-    for (j = 0; j < tamTabuleiro; j++)
-    {
-      /* TODO: Definir as Minas */
-      tabuleiro[i][j] = '0';
-    }
-  }
+  popularTabuleiro(tabuleiro, tamTabuleiro);
+  popularTabuleiro(tabuleiroEspelho, tamTabuleiro);
+  sortearMinas(tabuleiro, tamTabuleiro);
+  verificarCasasAdjacentes(tabuleiro, tamTabuleiro);
 
   /* GAME LOOP */
-
-    /* Desenhar o tabuleiro */
-    for (i = 0; i < tamTabuleiro; i++)
-    {
-      for (j = 0; j < tamTabuleiro; j++)
-      {
-        printf("%c", tabuleiro[i][j]);
-      }
-      printf("\n");
-    }
-
-  return 0;
-}
-
-char **criarTabuleiro(int tamanho)
-{
-  char **tabuleiro;
-  tabuleiro = (char **)malloc(tamanho * sizeof(char *));
-  
-  for (int i = 0; i < tamanho; i++)
+  while (GAME_STATE == PLAYING)
   {
-    tabuleiro[i] = (char *)malloc(tamanho * sizeof(char *));
+    int linha = 0, coluna = 0, elemento;
+
+    draw(tabuleiro, tamTabuleiro, tabuleiroEspelho);
+    puts("Selecione a linha e coluna desejadas no formato [i j]");
+    scanf("%i %i", &linha, &coluna);
+
+    if((linha < 0 || coluna < 0) ||                      // menor do que o tabuleiro
+      (linha >= tamTabuleiro || coluna >= tamTabuleiro)) // maior do que o tabuleiro
+      {
+        tratarMensagemDeError("Casa nao existente");
+        continue;
+      }
+
+    elemento = tabuleiro[linha][coluna];
+
+    if(elemento == BOMBA)
+    {
+      printf("\033[0;31m");
+      puts("Kaboooom ! Voce acertou uma bomba ! Game Over");
+      printf("\033[0m");
+      GAME_STATE = GAME_OVER;
+    }
+    else
+    {
+      tabuleiroEspelho[linha][coluna] = 1;
+      /* Revelar as casas adjacentes */
+    }  
   }
 
-  return tabuleiro;
+  return 0;
 }
