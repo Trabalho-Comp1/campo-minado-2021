@@ -2,7 +2,7 @@
 
 int main()
 {
-  int dificuldadeEscolhida, tamTabuleiro, **tabuleiro,  **tabuleiroEspelho;
+  int dificuldadeEscolhida, tamTabuleiro, **tabuleiro, **tabuleiroEspelho;
   char GAME_STATE = PLAYING;
 
   puts("==== JOGO DO CAMPO DO MINADO ====");
@@ -46,16 +46,16 @@ int main()
     puts("Selecione a linha e coluna desejadas no formato [i j]");
     scanf("%i %i", &linha, &coluna);
 
-    if((linha < 0 || coluna < 0) ||                      // menor do que o tabuleiro
-      (linha >= tamTabuleiro || coluna >= tamTabuleiro)) // maior do que o tabuleiro
-      {
-        tratarMensagemDeError("Casa nao existente");
-        continue;
-      }
+    if ((linha < 0 || coluna < 0) ||                       // menor do que o tabuleiro
+        (linha >= tamTabuleiro || coluna >= tamTabuleiro)) // maior do que o tabuleiro
+    {
+      tratarMensagemDeError("Casa nao existente");
+      continue;
+    }
 
     elemento = tabuleiro[linha][coluna];
 
-    if(elemento == BOMBA)
+    if (elemento == BOMBA)
     {
       printf("\033[0;31m");
       puts("Kaboooom ! Voce acertou uma bomba ! Game Over");
@@ -66,7 +66,7 @@ int main()
     {
       tabuleiroEspelho[linha][coluna] = 1;
       /* Revelar as casas adjacentes */
-    }  
+    }
   }
 
   return 0;

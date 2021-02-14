@@ -11,7 +11,12 @@
 
 ## Todo:
 
+### Lógica:
+TODO: Abrir todas as casas vazias adjacentes
+
+### Estilo:
 TODO: Pesquisar como alterar os caracteres de ASCII para UTF-8
+
 
 ```
 struct Game{
