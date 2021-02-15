@@ -1,40 +1,39 @@
 void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
 {
   system("cls");
-  for (int linha = 0; linha < tamTabuleiro; linha++)
+  for (int linha = -1; linha < tamTabuleiro; linha++)
   {
-    /*if(linha != -1)
+    if (linha == -1)
+    {
+      printf("\t");
+    }
+    else
     {
       printf("%i\t", linha);
-    } */
+    }
 
     for (int coluna = 0; coluna < tamTabuleiro; coluna++)
     {
-     /*  if(linha == -1 && coluna == -1)
+      if (linha == -1)
       {
-        printf("\t");
+        printf(" %i\t", coluna);
         continue;
       }
-      else if(coluna == -1)
+
+      if (tabuleiroEspelho[linha][coluna] == 0)
       {
-        continue;
+        /* printf("[%i, %i]\t", linha, coluna); */
+        printf("[X]\t");
       }
-      else if (linha == -1)
+      else
       {
-        printf("%i\t", coluna);
-        continue;
-      } */
-      if(tabuleiroEspelho[linha][coluna] == 0){
-        printf("[%i, %i]\t", linha, coluna);
-      } else {
-        printf("[  %i  ]\t", tabuleiro[linha][coluna]);
+        /* printf("[  %i  ]\t", tabuleiro[linha][coluna]); */
+        printf("[%i]\t", tabuleiro[linha][coluna]);
       }
-      /* printf("[%i]\t", tabuleiro[linha][coluna]); */
     }
     printf("\n");
   }
 }
-
 
 /*  
   for(i=0;i<FILEIRAS+1;i++) {
