@@ -2,8 +2,7 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
 {
   int linha, coluna;
   system("cls");
-  for (int linha = -1; linha < tamTabuleiro; linha++)
-  system("clear");
+  /* system("clear"); */
   for (linha = 0; linha < tamTabuleiro; linha++)
   {
     if (linha == -1)
@@ -37,25 +36,3 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
     printf("\n");
   }
 }
-
-/*  
-  for(i=0;i<FILEIRAS+1;i++) {
-    for(j=0;j<COLUNAS+1;j++) {
-      if(i==0) {
-        if(j==0) {
-          printf("\t");
-          continue;  
-        } else {
-          printf("%c\t", j-1+'A');
-          continue;
-        }
-      }
-      if(j==0) {
-        printf("%02d\t", i);
-        continue;
-      }
-      printf("%c\t", poltronas[i][j]);
-    }
-    printf("\n");
-  }
-*/

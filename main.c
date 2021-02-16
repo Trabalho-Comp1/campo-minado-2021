@@ -1,6 +1,6 @@
 #include "main.h"
 
-extern DIFICULDADE facil, medio, dificil;
+/* extern DIFICULDADE facil, medio, dificil; */
 
 int main()
 {
@@ -51,8 +51,8 @@ int main()
     puts("Selecione a linha e coluna desejadas no formato [i j]");
     scanf("%i %i", &linha, &coluna);
 
-    if ((linha < 0 || coluna < 0) ||                       // menor do que o tabuleiro
-        (linha >= dificuldade.tam || coluna >= dificuldade.tam)) // maior do que o tabuleiro
+    if ((linha < 0 || coluna < 0) ||                       /* menor do que o tabuleiro */
+        (linha >= dificuldade.tam || coluna >= dificuldade.tam)) /* maior do que o tabuleiro */
     {
       tratarMensagemDeError("Casa nao existente");
       continue;
