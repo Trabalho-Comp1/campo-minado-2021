@@ -1,19 +1,14 @@
 #include "main.h"
 
+extern DIFICULDADE facil, medio, dificil;
+
 int main()
 {
   int dificuldadeEscolhida;
   char GAME_STATE = PLAYING;
 
-  DIFICULDADE facil, medio, dificil, dificuldade;
+  DIFICULDADE dificuldade;
   TABULEIRO tabuleiro;
-
-  facil.tam = 8;
-  facil.nMinas = 10;
-  medio.tam = 16;
-  medio.nMinas = 40;
-  dificil.tam = 30;
-  dificil.nMinas = 99;
 
   puts("==== JOGO DO CAMPO DO MINADO ====");
   puts("Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos");
