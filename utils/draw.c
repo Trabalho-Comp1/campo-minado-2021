@@ -3,7 +3,7 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
   int linha, coluna;
   system("cls");
   /* system("clear"); */
-  for (linha = 0; linha < tamTabuleiro; linha++)
+  for (linha = -1; linha < tamTabuleiro; linha++)
   {
     if (linha == -1)
     {
