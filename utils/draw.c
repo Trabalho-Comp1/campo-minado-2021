@@ -1,6 +1,7 @@
 void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
 {
   system("cls");
+  system("clear");
   for (int linha = 0; linha < tamTabuleiro; linha++)
   {
     /*if(linha != -1)
