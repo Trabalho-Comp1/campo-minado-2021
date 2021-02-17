@@ -1,9 +1,9 @@
 #ifndef DEFS_H
 #define DEFS_H
 
-#define FACIL 1
-#define MEDIO 2
-#define DIFICIL 3
+#define FACIL 0
+#define MEDIO 1
+#define DIFICIL 2
 #define PLAYING 1
 #define GAME_OVER 2
 #define BOMBA -1

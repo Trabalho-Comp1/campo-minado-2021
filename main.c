@@ -1,21 +1,15 @@
 #include "main.h"
 
 /* extern DIFICULDADE facil, medio, dificil; */
+/* int dificuldadeEscolhida = -1; */
 
 int main()
 {
-  int dificuldadeEscolhida;
-  char GAME_STATE = PLAYING;
-
+  int GAME_STATE = PLAYING;
   DIFICULDADE dificuldade;
   TABULEIRO tabuleiro;
 
-  puts("==== JOGO DO CAMPO DO MINADO ====");
-  puts("Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos");
-  puts("=======================================");
-  puts("Escolha a dificuldade do jogo:");
-  puts("[1] - Facil, [2] - Medio, [3] - Dificil, [4] - SAIR");
-  scanf("%i", &dificuldadeEscolhida);
+  drawMainMenu();
 
   if (dificuldadeEscolhida == FACIL)
   {
@@ -51,7 +45,7 @@ int main()
     puts("Selecione a linha e coluna desejadas no formato [i j]");
     scanf("%i %i", &linha, &coluna);
 
-    if ((linha < 0 || coluna < 0) ||                       /* menor do que o tabuleiro */
+    if ((linha < 0 || coluna < 0) ||                             /* menor do que o tabuleiro */
         (linha >= dificuldade.tam || coluna >= dificuldade.tam)) /* maior do que o tabuleiro */
     {
       tratarMensagemDeError("Casa nao existente");
