@@ -1,7 +1,6 @@
 #include "main.h"
 
-//extern DIFICULDADE facil, medio, dificil;
-DIFICULDADE facil={.tam=4, .nMinas=3}, medio={.tam=16, .nMinas=40}, dificil={.tam=30, .nMinas=99};
+extern DIFICULDADE facil, medio, dificil;
 
 int main()
 {
@@ -80,7 +79,7 @@ int main()
       casasAbertas++;
 
       /* Caso todas as casas forem abertas, menos as que conterem bombas => vitória */
-      if(casasAbertas == tabuleiro.dificuldade.tam*tabuleiro.dificuldade.tam - (tabuleiro.dificuldade.tam*dificuldade.tam)/5){
+      if(casasAbertas == tabuleiro.dificuldade.tam*tabuleiro.dificuldade.tam - tabuleiro.dificuldade.nMinas){
           puts("Parabens! Voce ganhou o jogo!");
           GAME_STATE = GAME_OVER;
       }

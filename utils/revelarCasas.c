@@ -19,13 +19,13 @@ void revelarCasas(TABULEIRO tabuleiro, int linha, int coluna)
       if(casaAtualEspelho == 1){
           continue;
       }
+      
+      tabuleiro.espelho[linha + i][coluna + j] = 1;
 
       if (casaAtual == 0)
       {
         revelarCasas(tabuleiro, linha + i, coluna + j);
       }
-
-      tabuleiro.espelho[linha + i][coluna + j] = 1;
     }
   }
 }

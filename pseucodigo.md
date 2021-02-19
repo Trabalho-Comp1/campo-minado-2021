@@ -12,24 +12,37 @@
 ## Todo:
 
 ### Lógica:
-TODO: Abrir todas as casas vazias adjacentes
-
 TODO: Transformar as casas em objetos
-
-TODO: Marcar casa com bomba
 
 TODO: Primeiro clique não pode ser bomba
 
+TODO: Atualizar contagem de casas abertas (colocar no msm objeto do tabuleiro ?)
+
+### Estrutura do Jogo
+
+struct Game{
+  char nome[50];
+  Dificuldade dificuldade;
+  Tabuleiro tabuleiro[][];
+  int linhaSelecionada;
+  int colunaSelecionada;
+}
+
+struct Dificuldade{
+  int facil;
+  int medio;
+  int dificil;
+}
+
+DIFICULDADE Opcoes = {1, 2, 3}
+
+Game.dificuldade = Opcoes.facil;
+
+struct Tabuleiro{
+  int *desenho;
+  int *logida;
+  int tamanho;
+}
+
 ### Estilo:
 TODO: Pesquisar como alterar os caracteres de ASCII para UTF-8
-
-
-```
-struct Game{
-  int dificuldade;
-  int tabuleiro[][];
-  void* init;
-  void* draw;
-  void* update;
-}
-```
