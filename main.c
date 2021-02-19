@@ -5,11 +5,7 @@ int main()
   int dificuldadeEscolhida, tamTabuleiro, **tabuleiro, **tabuleiroEspelho;
   char GAME_STATE = PLAYING;
 
-  puts("==== JOGO DO CAMPO DO MINADO ====");
-  puts("Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos");
-  puts("=======================================");
-  puts("Escolha a dificuldade do jogo:");
-  puts("[1] - Facil, [2] - Medio, [3] - Dificil, [4] - SAIR");
+  introducao();
   scanf("%i", &dificuldadeEscolhida);
 
   if (dificuldadeEscolhida == FACIL)

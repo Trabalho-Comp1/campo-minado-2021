@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "./utils/introducao.c"
 #include "./utils/criarTabuleiro.c"
 #include "./utils/popularTabuleiro.c"
 #include "./utils/sortearMinas.c"
