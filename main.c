@@ -3,6 +3,7 @@
 int main()
 {
   int dificuldadeEscolhida, tamTabuleiro, **tabuleiro, **tabuleiroEspelho;
+  int casasAbertas = 0;
   char GAME_STATE = PLAYING;
 
   introducao();
@@ -61,6 +62,14 @@ int main()
     else
     {
       tabuleiroEspelho[linha][coluna] = 1;
+      casasAbertas++;
+
+      /* Caso todas as casas forem abertas, menos as que conterem bombas => vitória */
+      if(casasAbertas == tamTabuleiro*tamTabuleiro - (tamTabuleiro*tamTabuleiro)/5){
+          puts("Parabens! Voce ganhou o jogo!");
+          GAME_STATE = GAME_OVER;
+      }
+      
       /* Revelar as casas adjacentes */
     }
   }
