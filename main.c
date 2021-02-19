@@ -6,15 +6,12 @@ int main()
 {
   int dificuldadeEscolhida;
   char GAME_STATE = PLAYING;
+  int casasAbertas = 0;
 
   DIFICULDADE dificuldade;
   TABULEIRO tabuleiro;
 
-  puts("==== JOGO DO CAMPO DO MINADO ====");
-  puts("Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos");
-  puts("=======================================");
-  puts("Escolha a dificuldade do jogo:");
-  puts("[1] - Facil, [2] - Medio, [3] - Dificil, [4] - SAIR");
+  introducao();
   scanf("%i", &dificuldadeEscolhida);
 
   if (dificuldadeEscolhida == FACIL)
@@ -67,9 +64,28 @@ int main()
       printf("\033[0m");
       GAME_STATE = GAME_OVER;
     }
+
+    /* Continuar lógica para liberar os 0s */
+    else if (elemento == 0){
+        for (int i = -1; i < 2; i++)
+        {
+            for (int j = -1; j < 2; j++)
+            {
+                tabuleiro.espelho[i][j] = 1;
+            }
+        }
+    }
     else
     {
       tabuleiro.espelho[linha][coluna] = 1;
+      casasAbertas++;
+
+      /* Caso todas as casas forem abertas, menos as que conterem bombas => vitória */
+      if(casasAbertas == dificuldade.tam*dificuldade.tam - (dificuldade.tam*dificuldade.tam)/5){
+          puts("Parabens! Voce ganhou o jogo!");
+          GAME_STATE = GAME_OVER;
+      }
+
       /* Revelar as casas adjacentes */
     }
   }
