@@ -14,6 +14,12 @@
 ### Lógica:
 TODO: Abrir todas as casas vazias adjacentes
 
+TODO: Transformar as casas em objetos
+
+TODO: Marcar casa com bomba
+
+TODO: Primeiro clique não pode ser bomba
+
 ### Estilo:
 TODO: Pesquisar como alterar os caracteres de ASCII para UTF-8
 
