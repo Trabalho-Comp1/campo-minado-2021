@@ -1,8 +1,9 @@
 void verificarCasasAdjacentes(int **tabuleiro, int tamTabuleiro)
 {
-  for (int linha = 0; linha < tamTabuleiro; linha++)
+  int linha, coluna, i, j;
+  for (linha = 0; linha < tamTabuleiro; linha++)
   {
-    for (int coluna = 0; coluna < tamTabuleiro; coluna++)
+    for (coluna = 0; coluna < tamTabuleiro; coluna++)
     {
       unsigned int bombasProximas = 0;
       const int celulaCentral = tabuleiro[linha][coluna];
@@ -12,9 +13,9 @@ void verificarCasasAdjacentes(int **tabuleiro, int tamTabuleiro)
         continue;
       }
 
-      for (int i = -1; i < 2; i++)
+      for (i = -1; i < 2; i++)
       {
-        for (int j = -1; j < 2; j++)
+        for (j = -1; j < 2; j++)
         {
           if (
               (i == 0 && j == 0) ||                                     //proprio elemento

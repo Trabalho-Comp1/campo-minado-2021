@@ -1,7 +1,8 @@
 void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
 {
+  int linha, coluna;
   system("cls");
-  for (int linha = -1; linha < tamTabuleiro; linha++)
+  for (linha = -1; linha < tamTabuleiro; linha++)
   {
     if (linha == -1)
     {
@@ -12,7 +13,7 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
       printf("%i\t", linha);
     }
 
-    for (int coluna = 0; coluna < tamTabuleiro; coluna++)
+    for (coluna = 0; coluna < tamTabuleiro; coluna++)
     {
       if (linha == -1)
       {
