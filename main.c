@@ -67,13 +67,7 @@ int main()
 
     /* Continuar lógica para liberar os 0s */
     else if (elemento == 0){
-        for (int i = -1; i < 2; i++)
-        {
-            for (int j = -1; j < 2; j++)
-            {
-                tabuleiro.espelho[i][j] = 1;
-            }
-        }
+      revelarCasas();
     }
     else
     {
@@ -85,8 +79,6 @@ int main()
           puts("Parabens! Voce ganhou o jogo!");
           GAME_STATE = GAME_OVER;
       }
-
-      /* Revelar as casas adjacentes */
     }
   }
 
