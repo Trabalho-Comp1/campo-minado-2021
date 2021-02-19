@@ -14,7 +14,11 @@ void revelarCasas(TABULEIRO tabuleiro, int linha, int coluna)
         continue;
       }
       const int casaAtual = tabuleiro.jogavel[linha + i][coluna + j];
-      /* int casaAtualEspelho = tabuleiro.espelho[linha + i][coluna + j]; */
+      int casaAtualEspelho = tabuleiro.espelho[linha + i][coluna + j];
+
+      if(casaAtualEspelho == 1){
+          continue;
+      }
 
       if (casaAtual == 0)
       {
