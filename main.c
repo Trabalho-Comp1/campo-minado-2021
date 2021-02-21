@@ -29,8 +29,7 @@ int main()
     exit(0);
   }
 
-  tabuleiro.jogavel = criarTabuleiro(tabuleiro.dificuldade.tam);
-  tabuleiro.espelho = criarTabuleiro(tabuleiro.dificuldade.tam);
+  tabuleiro = criarTabuleiro(tabuleiro.dificuldade);
 
   popularTabuleiro(tabuleiro.jogavel, tabuleiro.dificuldade.tam);
   popularTabuleiro(tabuleiro.espelho, tabuleiro.dificuldade.tam);
@@ -42,7 +41,7 @@ int main()
   {
     int linha = 0, coluna = 0, elemento;
 
-    draw(tabuleiro.jogavel, tabuleiro.dificuldade.tam, tabuleiro.espelho);
+    draw(tabuleiro);
     puts("Selecione a linha e coluna desejadas no formato [i j]");
     scanf("%i %i", &linha, &coluna);
 

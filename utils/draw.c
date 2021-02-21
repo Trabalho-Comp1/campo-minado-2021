@@ -1,8 +1,8 @@
-void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
+void draw(TABULEIRO tabuleiro)
 {
   int linha, coluna;
   system("cls");
-  for (linha = -1; linha < tamTabuleiro; linha++)
+  for (linha = -1; linha < tabuleiro.dificuldade.tam; linha++)
   {
     if (linha == -1)
     {
@@ -13,7 +13,7 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
       printf("%i\t", linha);
     }
 
-    for (coluna = 0; coluna < tamTabuleiro; coluna++)
+    for (coluna = 0; coluna < tabuleiro.dificuldade.tam; coluna++)
     {
       if (linha == -1)
       {
@@ -21,14 +21,13 @@ void draw(int **tabuleiro, int tamTabuleiro, int **tabuleiroEspelho)
         continue;
       }
 
-      if (tabuleiroEspelho[linha][coluna] == 0)
+      if (tabuleiro.espelho[linha][coluna] == 0)
       {
         printf("[X]\t");
       }
       else
       {
-        /* printf("[  %i  ]\t", tabuleiro[linha][coluna]); */
-        printf("[%i]\t", tabuleiro[linha][coluna]);
+        printf("[%i]\t", tabuleiro.jogavel[linha][coluna]);
       }
     }
     printf("\n");

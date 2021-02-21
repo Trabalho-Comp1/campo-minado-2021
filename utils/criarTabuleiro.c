@@ -1,12 +1,18 @@
-int **criarTabuleiro(int tamanho)
+TABULEIRO criarTabuleiro(DIFICULDADE dificuldade)
 {
-  int i, **tabuleiro;
-  tabuleiro = (int **)malloc(tamanho * sizeof(int *));
+  int i, tamanho;
+  TABULEIRO temp;
+
+  temp.dificuldade = dificuldade;
+  tamanho = temp.dificuldade.tam;
+
+  temp.jogavel = (int **)malloc(tamanho * sizeof(int *));
+  temp.espelho = (int **)malloc(tamanho * sizeof(int *));
 
   for (i = 0; i < tamanho; i++)
   {
-    tabuleiro[i] = (int *)malloc(tamanho * sizeof(int *));
+    temp.jogavel[i] = (int *)malloc(tamanho * sizeof(int *));
+    temp.espelho[i] = (int *)malloc(tamanho * sizeof(int *));
   }
-
-  return tabuleiro;
+  return temp;
 }
