@@ -7,6 +7,7 @@
 #include "./utils/introducao.c"
 #include "./utils/revelarCasas.c"
 #include "./utils/criarTabuleiro.c"
+#include "./utils/popularMatrizCom.c"
 #include "./utils/popularTabuleiro.c"
 #include "./utils/sortearMinas.c"
 #include "./utils/verificarCasasAdjacentes.c"

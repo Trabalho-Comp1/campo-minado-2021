@@ -30,12 +30,10 @@ int main()
   }
 
   tabuleiro = criarTabuleiro(tabuleiro.dificuldade);
-
-  popularTabuleiro(tabuleiro.jogavel, tabuleiro.dificuldade.tam);
-  popularTabuleiro(tabuleiro.espelho, tabuleiro.dificuldade.tam);
+  popularTabuleiro(tabuleiro);
   sortearMinas(tabuleiro);
   verificarCasasAdjacentes(tabuleiro);
-
+  
   /* GAME LOOP */
   while (GAME_STATE == PLAYING)
   {
@@ -56,6 +54,8 @@ int main()
 
     if (elemento == BOMBA)
     {
+      popularMatrizCom(1, tabuleiro.espelho, tabuleiro.dificuldade.tam);
+      draw(tabuleiro);
       printf("\033[0;31m");
       puts("Kaboooom ! Voce acertou uma bomba ! Game Over");
       printf("\033[0m");

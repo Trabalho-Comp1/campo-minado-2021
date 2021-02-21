@@ -1,11 +1,5 @@
-void popularTabuleiro(int **tabuleiro, int tamTabuleiro)
+void popularTabuleiro(TABULEIRO tabuleiro)
 {
-  int linha, coluna;
-  for (linha = 0; linha < tamTabuleiro; linha++)
-  {
-    for (coluna = 0; coluna < tamTabuleiro; coluna++)
-    {
-      tabuleiro[linha][coluna] = 0;
-    }
-  }
+  popularMatrizCom(0, tabuleiro.jogavel, tabuleiro.dificuldade.tam);
+  popularMatrizCom(0, tabuleiro.espelho, tabuleiro.dificuldade.tam);
 }

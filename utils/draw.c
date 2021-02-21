@@ -1,7 +1,9 @@
 void draw(TABULEIRO tabuleiro)
 {
   int linha, coluna;
-  system("cls");
+  /* system("cls"); */
+  printf("\033[1;1H\033[2J"); /*Limpar terminal (teoricamente funciona Linux/Win)*/
+  
   for (linha = -1; linha < tabuleiro.dificuldade.tam; linha++)
   {
     if (linha == -1)
