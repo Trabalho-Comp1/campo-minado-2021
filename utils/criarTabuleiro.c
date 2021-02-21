@@ -11,8 +11,8 @@ TABULEIRO criarTabuleiro(DIFICULDADE dificuldade)
 
   for (i = 0; i < tamanho; i++)
   {
-    *(temp.jogavel+i) = (int *)malloc(tamanho * sizeof(int));
-    *(temp.espelho+i) = (int *)malloc(tamanho * sizeof(int));
+    *(temp.jogavel+i) = calloc(tamanho, sizeof(int));
+    *(temp.espelho+i) = calloc(tamanho, sizeof(int));
   }
   return temp;
 }

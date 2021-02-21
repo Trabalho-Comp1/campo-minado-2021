@@ -30,7 +30,6 @@ int main()
   }
 
   tabuleiro = criarTabuleiro(tabuleiro.dificuldade);
-  popularTabuleiro(tabuleiro);
   sortearMinas(tabuleiro);
   verificarCasasAdjacentes(tabuleiro);
   
