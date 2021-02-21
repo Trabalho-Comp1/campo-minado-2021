@@ -1,14 +1,14 @@
-void sortearMinas(int **tabuleiro, DIFICULDADE dificuldade)
+void sortearMinas(TABULEIRO tabuleiro)
 {
   int linha, coluna, contador = 0;
-  const int numeroMinas = dificuldade.nMinas;
+  const int numeroMinas = tabuleiro.dificuldade.nMinas, tamTabuleiro = tabuleiro.dificuldade.tam;
   srand(time(0));
 
   while (contador < numeroMinas)
   {
-    for (linha = 0; linha < dificuldade.tam && contador < numeroMinas; linha++)
+    for (linha = 0; linha < tamTabuleiro && contador < numeroMinas; linha++)
     {
-      for (coluna = 0; coluna < dificuldade.tam; coluna++)
+      for (coluna = 0; coluna < tamTabuleiro; coluna++)
       {
         const int random = rand() % 11;
 
@@ -19,7 +19,7 @@ void sortearMinas(int **tabuleiro, DIFICULDADE dificuldade)
 
         if (random <= 3 && contador < numeroMinas)
         {
-          tabuleiro[linha][coluna] = BOMBA;
+          tabuleiro.jogavel[linha][coluna] = BOMBA;
           contador++;
         }
       }

@@ -33,8 +33,8 @@ int main()
 
   popularTabuleiro(tabuleiro.jogavel, tabuleiro.dificuldade.tam);
   popularTabuleiro(tabuleiro.espelho, tabuleiro.dificuldade.tam);
-  sortearMinas(tabuleiro.jogavel, tabuleiro.dificuldade);
-  verificarCasasAdjacentes(tabuleiro.jogavel, tabuleiro.dificuldade.tam);
+  sortearMinas(tabuleiro);
+  verificarCasasAdjacentes(tabuleiro);
 
   /* GAME LOOP */
   while (GAME_STATE == PLAYING)
