@@ -4,29 +4,24 @@ extern DIFICULDADE facil, medio, dificil;
 
 int main()
 {
-  int dificuldadeEscolhida;
+  int dificuldadeEscolhida, casasAbertas = 0;
   char GAME_STATE = PLAYING;
-  int casasAbertas = 0;
 
-  DIFICULDADE dificuldade;
   TABULEIRO tabuleiro;
 
   introducao();
-  scanf("%i", &dificuldadeEscolhida);
 
+  scanf("%i", &dificuldadeEscolhida);
   if (dificuldadeEscolhida == FACIL)
   {
-    /* dificuldade = facil; */
     tabuleiro.dificuldade = facil;
   }
   else if (dificuldadeEscolhida == MEDIO)
   {
-    /* dificuldade = medio; */
     tabuleiro.dificuldade = medio;
   }
   else if (dificuldadeEscolhida == DIFICIL)
   {
-    /* dificuldade = dificil; */
     tabuleiro.dificuldade = dificil;
   }
   else
@@ -51,8 +46,8 @@ int main()
     puts("Selecione a linha e coluna desejadas no formato [i j]");
     scanf("%i %i", &linha, &coluna);
 
-    if ((linha < 0 || coluna < 0) ||                       // menor do que o tabuleiro
-        (linha >= tabuleiro.dificuldade.tam || coluna >= tabuleiro.dificuldade.tam)) // maior do que o tabuleiro
+    if ((linha < 0 || coluna < 0) ||                       /* menor do que o tabuleiro */
+        (linha >= tabuleiro.dificuldade.tam || coluna >= tabuleiro.dificuldade.tam)) /* maior do que o tabuleiro */
     {
       tratarMensagemDeError("Casa nao existente");
       continue;

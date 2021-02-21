@@ -18,9 +18,9 @@ void verificarCasasAdjacentes(int **tabuleiro, int tamTabuleiro)
         for (j = -1; j < 2; j++)
         {
           if (
-              (i == 0 && j == 0) ||                                     //proprio elemento
-              (linha + i < 0 || coluna + j < 0) ||                      // menor do que o tabuleiro
-              (linha + i >= tamTabuleiro || coluna + j >= tamTabuleiro) // maior que o tabuleiro
+              (i == 0 && j == 0) ||                                     /* proprio elemento */
+              (linha + i < 0 || coluna + j < 0) ||                      /* menor do que o tabuleiro */
+              (linha + i >= tamTabuleiro || coluna + j >= tamTabuleiro) /* maior que o tabuleiro */
           )
           {
             continue;

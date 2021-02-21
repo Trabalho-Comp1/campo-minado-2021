@@ -1,3 +1,3 @@
 #include "globais.h"
 
-DIFICULDADE facil={.tam=4, .nMinas=3}, medio={.tam=16, .nMinas=40}, dificil={.tam=30, .nMinas=99};
+DIFICULDADE facil={4,3}, medio={16,40}, dificil={30,99};
