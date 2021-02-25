@@ -4,7 +4,7 @@ extern DIFICULDADE facil, medio, dificil;
 
 int main()
 {
-  int dificuldadeEscolhida, casasAbertas = 0;
+  int dificuldadeEscolhida;
   char GAME_STATE = PLAYING;
 
   TABULEIRO tabuleiro;
@@ -60,19 +60,17 @@ int main()
       printf("\033[0m");
       GAME_STATE = GAME_OVER;
     }
-
-    /* Continuar lógica para liberar os 0s */
-    else if (elemento == 0){
+    else{
       tabuleiro.espelho[linha][coluna] = 1;
-      revelarCasas(tabuleiro, linha, coluna);
-    }
-    else
-    {
-      tabuleiro.espelho[linha][coluna] = 1;
-      casasAbertas++;
+      tabuleiro.casasAbertas++;
 
+      if(elemento==0){
+        revelarCasas(&tabuleiro, linha, coluna);  
+      }
+      
       /* Caso todas as casas forem abertas, menos as que conterem bombas => vitória */
-      if(casasAbertas == tabuleiro.dificuldade.tam*tabuleiro.dificuldade.tam - tabuleiro.dificuldade.nMinas){
+      if(tabuleiro.casasAbertas == tabuleiro.dificuldade.tam*tabuleiro.dificuldade.tam - tabuleiro.dificuldade.nMinas){
+          draw(tabuleiro);
           puts("Parabens! Voce ganhou o jogo!");
           GAME_STATE = GAME_OVER;
       }

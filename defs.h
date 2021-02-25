@@ -20,6 +20,7 @@ typedef struct
   DIFICULDADE dificuldade;
   int **jogavel;
   int **espelho;
+  int casasAbertas;
 } TABULEIRO;
 
 #endif

@@ -4,6 +4,7 @@ TABULEIRO criarTabuleiro(DIFICULDADE dificuldade)
   TABULEIRO temp;
 
   temp.dificuldade = dificuldade;
+  temp.casasAbertas = 0;
   tamanho = temp.dificuldade.tam;
 
   temp.jogavel = (int **)malloc(tamanho * sizeof(int *));

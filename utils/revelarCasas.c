@@ -1,4 +1,4 @@
-void revelarCasas(TABULEIRO tabuleiro, int linha, int coluna)
+void revelarCasas(TABULEIRO *tabuleiro, int linha, int coluna)
 {
   int i, j, casaAtual, casaAtualEspelho;
   for (i = -1; i < 2; i++)
@@ -8,19 +8,20 @@ void revelarCasas(TABULEIRO tabuleiro, int linha, int coluna)
       if (
           (i == 0 && j == 0) ||                                     /*proprio elemento*/
           (linha + i < 0 || coluna + j < 0) ||                      /* menor do que o tabuleiro*/
-          (linha + i >= tabuleiro.dificuldade.tam || coluna + j >= tabuleiro.dificuldade.tam) /* maior que o tabuleiro */
+          (linha + i >= tabuleiro->dificuldade.tam || coluna + j >= tabuleiro->dificuldade.tam) /* maior que o tabuleiro */
       )
       {
         continue;
       }
-      casaAtual = tabuleiro.jogavel[linha + i][coluna + j];
-      casaAtualEspelho = tabuleiro.espelho[linha + i][coluna + j];
+      casaAtual = tabuleiro->jogavel[linha + i][coluna + j];
+      casaAtualEspelho = tabuleiro->espelho[linha + i][coluna + j];
 
       if(casaAtualEspelho == 1){
           continue;
       }
       
-      tabuleiro.espelho[linha + i][coluna + j] = 1;
+      tabuleiro->casasAbertas++;
+      tabuleiro->espelho[linha + i][coluna + j] = 1;
 
       if (casaAtual == 0)
       {
