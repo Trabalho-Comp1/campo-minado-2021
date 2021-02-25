@@ -39,7 +39,7 @@ int main()
     int linha = 0, coluna = 0, elemento;
 
     draw(tabuleiro);
-    puts("Selecione a linha e coluna desejadas no formato [i j]");
+    puts("Digite a linha e coluna desejadas separadas por um espaço. Ex: '0 3'.");
     scanf("%i %i", &linha, &coluna);
 
     if ((linha < 0 || coluna < 0) ||                       /* menor do que o tabuleiro */
