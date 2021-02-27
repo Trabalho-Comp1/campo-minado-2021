@@ -14,10 +14,6 @@
 ### Lógica:
 TODO: Transformar as casas em objetos
 
-TODO: Primeiro clique não pode ser bomba
-
-TODO: Atualizar contagem de casas abertas (colocar no msm objeto do tabuleiro ?)
-
 ### Estrutura do Jogo
 
 struct Game{
@@ -39,8 +35,8 @@ DIFICULDADE Opcoes = {1, 2, 3}
 Game.dificuldade = Opcoes.facil;
 
 struct Tabuleiro{
-  int *desenho;
-  int *logida;
+  int *tabuleiro;
+  int *espelho;
   int tamanho;
 }
 

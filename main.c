@@ -4,99 +4,129 @@ extern DIFICULDADE facil, medio, dificil;
 
 int main()
 {
+  /* TABULEIRO *tabuleiro; */
   int dificuldadeEscolhida;
-  char GAME_STATE = PLAYING;
-
-  TABULEIRO tabuleiro;
+  /* char GAME_STATE = PLAYING; */
+  setlocale(LC_ALL, "Portuguese");
+  fwide(stdout, 1);
+  /* fputwc(L'\uFEFF', stdout); */
 
   introducao();
-
   scanf("%i", &dificuldadeEscolhida);
-  do{}while(getchar()!='\n');
+
+  do
+  {
+  } while (getchar() != '\n');
 
   if (dificuldadeEscolhida == FACIL)
   {
-    tabuleiro.dificuldade = facil;
+    /* tabuleiro.dificuldade = facil; */
+    Jogo.dificuldade = facil;
   }
   else if (dificuldadeEscolhida == MEDIO)
   {
-    tabuleiro.dificuldade = medio;
+    /* tabuleiro.dificuldade = medio; */
+    Jogo.dificuldade = medio;
   }
   else if (dificuldadeEscolhida == DIFICIL)
   {
-    tabuleiro.dificuldade = dificil;
+    /* tabuleiro.dificuldade = dificil; */
+    Jogo.dificuldade = dificil;
   }
   else
   {
     exit(0);
   }
 
-  tabuleiro = criarTabuleiro(tabuleiro.dificuldade);
-  sortearMinas(tabuleiro);
-  verificarCasasAdjacentes(tabuleiro);
-  
+  Jogo.tabuleiro = criarTabuleiro();
+  sortearMinas();
+  verificarCasasAdjacentes();
+  Jogo.GAME_STATE = PLAYING;
+
   /* GAME LOOP */
-  while (GAME_STATE == PLAYING)
+  while (Jogo.GAME_STATE == PLAYING)
   {
-    int linha = 0, coluna = 0, *elemento, *elementoEspelho;
-    char operacao=' ';
+    int linha = 0, coluna = 0, elemento, elementoEspelho;
+    char operacao = ' ';
 
-    draw(tabuleiro);
+    draw();
     puts("Digite a linha e a coluna desejadas. Ex: '0 3'.");
-    puts("Caso queira marcar/desmarcar a casa, digite um M após a coluna. Ex: '0 3M'.");
+    printf("Caso queira marcar/desmarcar a casa, digite um M após a coluna. Ex: '0 3M'.\n");
     scanf("%i %i", &linha, &coluna);
-    operacao = getchar();
+    /* operacao = getchar(); */
 
-    if ((linha < 0 || coluna < 0) ||                       /* menor do que o tabuleiro */
-        (linha >= tabuleiro.dificuldade.tam || coluna >= tabuleiro.dificuldade.tam)) /* maior do que o tabuleiro */
+    if ((linha < 0 || coluna < 0) ||                                       /* menor do que o tabuleiro */
+        (linha >= Jogo.dificuldade.tam || coluna >= Jogo.dificuldade.tam)) /* maior do que o tabuleiro */
     {
-      tratarMensagemDeError("Casa nao existente");
+      tratarMensagemDeError("Casa não existente!");
       continue;
     }
 
-    elemento = &tabuleiro.jogavel[linha][coluna];
-    elementoEspelho = &tabuleiro.espelho[linha][coluna];
+    elemento = Jogo.tabuleiro.jogavel[linha][coluna];
+    elementoEspelho = Jogo.tabuleiro.espelho[linha][coluna];
 
-    if(*elementoEspelho == 1){
-      tratarMensagemDeError("Casa ja selecionada!");
+    if (Jogo.numJogadas == 0 && elemento == BOMBA)
+    {
+      reposicionarMina(linha, coluna);
+      verificarCasasAdjacentes();
+
+      elementoEspelho = CASA_ABERTA;
+      Jogo.casasAbertas++;
+      revelarCasas(linha, coluna);
+
       continue;
     }
 
-    if((operacao=='M' || operacao=='m') && *elementoEspelho!=CASA_ABERTA){
-      if(*elementoEspelho==CASA_FECHADA){
-        *elementoEspelho = CASA_MARCADA;
-      }else{
-       *elementoEspelho = CASA_FECHADA;
-      }
+    if (elementoEspelho == CASA_ABERTA)
+    {
+      tratarMensagemDeError("Casa já selecionada!");
       continue;
-    } else{
-      if (*elemento == BOMBA)
+    }
+
+    if ((operacao == 'M' || operacao == 'm') && elementoEspelho != CASA_ABERTA)
+    {
+      if (elementoEspelho == CASA_FECHADA)
       {
-        popularMatrizCom(1, tabuleiro.espelho, tabuleiro.dificuldade.tam);
-        draw(tabuleiro);
-        printf("\033[0;31m");
-        puts("Kaboooom ! Voce acertou uma bomba ! Game Over");
-        printf("\033[0m");
-        GAME_STATE = GAME_OVER;
+        elementoEspelho = CASA_MARCADA;
       }
-      else{
-        *elementoEspelho = 1;
-        tabuleiro.casasAbertas++;
+      else
+      {
+        elementoEspelho = CASA_FECHADA;
+      }
+      
+      continue;
+    }
+    else if (elemento == BOMBA)
+    {
+      popularMatrizCom(1, Jogo.tabuleiro.espelho);
+      draw();
+      printf("\033[0;31m");
+      wprintf(L"Kaboooom! Você acertou uma bomba! Game Over.\n");
+      printf("\033[0m");
+      Jogo.GAME_STATE = GAME_OVER;
+    }
+    else
+    {
+      elementoEspelho = CASA_ABERTA;
+      Jogo.casasAbertas++;
 
-        if(*elemento==0){
-          revelarCasas(&tabuleiro, linha, coluna);  
-        }
-        
-        /* Caso todas as casas forem abertas, menos as que contém bombas => vitória */
-        if(tabuleiro.casasAbertas == tabuleiro.dificuldade.tam*tabuleiro.dificuldade.tam - tabuleiro.dificuldade.nMinas){
-            draw(tabuleiro);
-            printf("\033[0;32m");
-            puts("Parabens! Voce ganhou o jogo!");
-            printf("\033[0m");
-            GAME_STATE = GAME_OVER;
-        }
+      if (elemento == 0)
+      {
+        revelarCasas(linha, coluna);
       }
     }
+
+    /* Caso todas as casas forem abertas, menos as que contém bombas => vitória */
+    if (Jogo.casasAbertas == Jogo.dificuldade.tam * Jogo.dificuldade.tam - Jogo.dificuldade.nMinas)
+    {
+      draw();
+      printf("\033[0;32m");
+      wprintf(L"Parabéns! Você ganhou o jogo!\n");
+      printf("\033[0m");
+      Jogo.GAME_STATE = GAME_OVER;
+    }
+
+    Jogo.numJogadas++;
   }
 
   return 0;

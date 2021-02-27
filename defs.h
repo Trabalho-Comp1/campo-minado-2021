@@ -12,18 +12,26 @@
 #define CASA_FECHADA 0
 #define CASA_ABERTA 1
 
-typedef struct 
+typedef struct _DIFICULDADE
 {
   int tam;
   int nMinas;
 } DIFICULDADE;
 
-typedef struct 
+typedef struct _TABULEIRO
 {
-  DIFICULDADE dificuldade;
   int **jogavel;
   int **espelho;
-  int casasAbertas;
 } TABULEIRO;
+
+/* Adicionar propriedade de pontuação */
+typedef struct _GAME
+{
+  DIFICULDADE dificuldade;
+  TABULEIRO tabuleiro;
+  int GAME_STATE;
+  unsigned int casasAbertas;
+  unsigned int numJogadas;
+} GAME;
 
 #endif

@@ -1,14 +1,14 @@
-void verificarCasasAdjacentes(TABULEIRO tabuleiro)
+void verificarCasasAdjacentes()
 {
   int linha, coluna, i, j;
-  const int tamTabuleiro = tabuleiro.dificuldade.tam;
+  const int tamTabuleiro = Jogo.dificuldade.tam;
 
   for (linha = 0; linha < tamTabuleiro; linha++)
   {
     for (coluna = 0; coluna < tamTabuleiro; coluna++)
     {
       unsigned int bombasProximas = 0;
-      const int celulaCentral = tabuleiro.jogavel[linha][coluna];
+      const int celulaCentral = Jogo.tabuleiro.jogavel[linha][coluna];
 
       if (celulaCentral == BOMBA)
       {
@@ -27,13 +27,13 @@ void verificarCasasAdjacentes(TABULEIRO tabuleiro)
           {
             continue;
           }
-          if (tabuleiro.jogavel[linha + i][coluna + j] == BOMBA)
+          if (Jogo.tabuleiro.jogavel[linha + i][coluna + j] == BOMBA)
           {
             bombasProximas++;
           }
         }
       }
-      tabuleiro.jogavel[linha][coluna] = bombasProximas;
+      Jogo.tabuleiro.jogavel[linha][coluna] = bombasProximas;
     }
   }
 }

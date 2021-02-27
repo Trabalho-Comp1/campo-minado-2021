@@ -1,4 +1,4 @@
-void revelarCasas(TABULEIRO *tabuleiro, int linha, int coluna)
+void revelarCasas(int linha, int coluna)
 {
   int i, j, casaAtual, casaAtualEspelho;
   for (i = -1; i < 2; i++)
@@ -8,24 +8,23 @@ void revelarCasas(TABULEIRO *tabuleiro, int linha, int coluna)
       if (
           (i == 0 && j == 0) ||                                     /*proprio elemento*/
           (linha + i < 0 || coluna + j < 0) ||                      /* menor do que o tabuleiro*/
-          (linha + i >= tabuleiro->dificuldade.tam || coluna + j >= tabuleiro->dificuldade.tam) /* maior que o tabuleiro */
+          (linha + i >= Jogo.dificuldade.tam || coluna + j >= Jogo.dificuldade.tam) /* maior que o tabuleiro */
       )
       {
         continue;
       }
-      casaAtual = tabuleiro->jogavel[linha + i][coluna + j];
-      casaAtualEspelho = tabuleiro->espelho[linha + i][coluna + j];
+      casaAtual = Jogo.tabuleiro.jogavel[linha + i][coluna + j];
+      casaAtualEspelho = Jogo.tabuleiro.espelho[linha + i][coluna + j];
 
-      if(casaAtualEspelho == 1){
+      if(casaAtualEspelho == CASA_ABERTA){
           continue;
       }
       
-      tabuleiro->casasAbertas++;
-      tabuleiro->espelho[linha + i][coluna + j] = 1;
-
-      if (casaAtual == 0)
+      if (casaAtual == SEM_BOMBA)
       {
-        revelarCasas(tabuleiro, linha + i, coluna + j);
+        Jogo.casasAbertas++;
+        Jogo.tabuleiro.espelho[linha + i][coluna + j] = CASA_ABERTA;
+        revelarCasas(linha + i, coluna + j);
       }
     }
   }

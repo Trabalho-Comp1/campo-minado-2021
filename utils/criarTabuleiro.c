@@ -1,11 +1,12 @@
-TABULEIRO criarTabuleiro(DIFICULDADE dificuldade)
+TABULEIRO criarTabuleiro()
 {
   int i, tamanho;
   TABULEIRO temp;
 
-  temp.dificuldade = dificuldade;
+/*temp.dificuldade = dificuldade;
   temp.casasAbertas = 0;
-  tamanho = temp.dificuldade.tam;
+  temp.numJogadas = 0; */
+  tamanho = Jogo.dificuldade.tam;
 
   temp.jogavel = (int **)malloc(tamanho * sizeof(int *));
   temp.espelho = (int **)malloc(tamanho * sizeof(int *));
@@ -15,5 +16,6 @@ TABULEIRO criarTabuleiro(DIFICULDADE dificuldade)
     *(temp.jogavel+i) = calloc(tamanho, sizeof(int));
     *(temp.espelho+i) = calloc(tamanho, sizeof(int));
   }
+
   return temp;
 }
