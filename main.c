@@ -42,8 +42,8 @@ int main()
     char operacao=' ';
 
     draw(tabuleiro);
-    puts("==============================");
-    puts("Digite a linha e a coluna desejadas e um M no final caso queira marcar/desmarcar aquela casa. Ex: '0 3' ou '0 3 M'.");
+    puts("Digite a linha e a coluna desejadas. Ex: '0 3'.");
+    puts("Caso queira marcar/desmarcar a casa, digite um M após a coluna. Ex: '0 3M'.");
     scanf("%i %i", &linha, &coluna);
     operacao = getchar();
 

@@ -1,4 +1,5 @@
 void introducao(){
+    printf("\033[1;1H\033[2J"); /*Limpar terminal (teoricamente funciona Linux/Win)*/
     puts("\n==== JOGO DO CAMPO DO MINADO ====\n");
 
     puts("     ,--.!,\n"
