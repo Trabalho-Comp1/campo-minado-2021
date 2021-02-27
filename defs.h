@@ -7,7 +7,10 @@
 #define PLAYING 1
 #define GAME_OVER 2
 #define BOMBA -1
-#define CASA_LIVRE 0
+#define SEM_BOMBA 0
+#define CASA_MARCADA -1
+#define CASA_FECHADA 0
+#define CASA_ABERTA 1
 
 typedef struct 
 {

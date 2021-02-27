@@ -27,6 +27,9 @@ void draw(TABULEIRO tabuleiro)
       {
         printf("[X]\t");
       }
+      else if(tabuleiro.espelho[linha][coluna] == -1){
+        printf("[M]\t");
+      }
       else
       {
         printf("[%i]\t", tabuleiro.jogavel[linha][coluna]);
