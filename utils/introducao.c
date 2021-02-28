@@ -1,7 +1,7 @@
 void introducao(){
     puts("\n=================== JOGO DO CAMPO DO MINADO ===================\n");
 
-    puts("\t\t\t        ,--.!,\n"
+    printf("\t\t\t        ,--.!,\n"
          "\t\t\t     __/   -*-\n"
          "\t\t\t   ,d08b.  '|`\n"
          "\t\t\t   0088MM\n"
