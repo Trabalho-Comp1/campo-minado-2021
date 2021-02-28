@@ -12,7 +12,7 @@
 ## Todo:
 
 ### Lógica:
-TODO: Transformar as casas em objetos
+
 
 ### Estrutura do Jogo
 
@@ -25,14 +25,14 @@ struct Game{
 }
 
 struct Dificuldade{
-  int facil;
-  int medio;
-  int dificil;
+  int Facil;
+  int Medio;
+  int Dificil;
 }
 
 DIFICULDADE Opcoes = {1, 2, 3}
 
-Game.dificuldade = Opcoes.facil;
+Game.dificuldade = Opcoes.Facil;
 
 struct Tabuleiro{
   int *tabuleiro;

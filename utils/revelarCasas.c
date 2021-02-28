@@ -20,11 +20,14 @@ void revelarCasas(int linha, int coluna)
           continue;
       }
       
-      if (casaAtual == SEM_BOMBA)
+      if (casaAtual >= SEM_BOMBA)
       {
         Jogo.casasAbertas++;
         Jogo.tabuleiro.espelho[linha + i][coluna + j] = CASA_ABERTA;
-        revelarCasas(linha + i, coluna + j);
+        
+        if(casaAtual == SEM_BOMBA){
+          revelarCasas(linha + i, coluna + j);
+        }
       }
     }
   }

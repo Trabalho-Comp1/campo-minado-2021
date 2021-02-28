@@ -4,7 +4,7 @@
 
 #define GLOBAIS_H
 
-extern DIFICULDADE facil, medio, dificil; /*Mudar pra Facil, Medio, Dificil*/
+extern DIFICULDADE Facil, Medio, Dificil;
 extern GAME Jogo;
 
 #endif

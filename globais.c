@@ -1,4 +1,4 @@
 #include "globais.h"
 
-DIFICULDADE facil={4,3}, medio={8,10}, dificil={16,40};
+DIFICULDADE Facil={4,3}, Medio={8,10}, Dificil={16,40};
 GAME Jogo = {{0}, {0}, -1, 0, 0};
