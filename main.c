@@ -13,9 +13,7 @@ int main()
   
   /* Escolhendo e setando dificuldade do jogo */
   scanf("%i", &dificuldadeEscolhida);
-  do
-  {
-  } while (getchar() != '\n');
+  do{} while (getchar() != '\n');
 
   if (dificuldadeEscolhida == FACIL)
   {
@@ -80,6 +78,7 @@ int main()
       continue;
     }
 
+    /* Jogador pode marcar uma casa */
     if ((operacao == 'M' || operacao == 'm') && *elementoEspelho != CASA_ABERTA)
     {
       if (*elementoEspelho == CASA_FECHADA)
