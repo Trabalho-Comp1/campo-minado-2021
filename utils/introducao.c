@@ -11,5 +11,5 @@ void introducao(){
     puts("===============================================================\n");
 
     puts("Escolha a dificuldade do jogo:");
-    wprintf(L"[1] - Fácil, [2] - Médio, [3] - Difícil, [4] - Sair\n");
+    printf("[1] - Facil, [2] - Medio, [3] - Dificil, [4] - Sair\n");
 }

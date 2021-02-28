@@ -5,8 +5,6 @@ extern DIFICULDADE Facil, Medio, Dificil;
 int main()
 {
   int dificuldadeEscolhida;
-  setlocale(LC_ALL, "Portuguese");
-  fwide(stdout, 1);
 
   /* Função para mostrar a tela inicial do jogo */
   introducao();
@@ -46,7 +44,7 @@ int main()
 
     draw();
     puts("Digite a linha e a coluna desejadas. Ex: '0 3'.");
-    wprintf(L"Caso queira marcar/desmarcar a casa, digite um M após a coluna. Ex: '0 3M'.\n");
+    printf("Caso queira marcar/desmarcar a casa, digite um M depois da coluna. Ex: '0 3M'.\n");
     scanf("%i %i%c", &linha, &coluna, &operacao);
 
     /* Verificar se casa escolhida existe */
@@ -97,7 +95,7 @@ int main()
       popularMatrizCom(1, Jogo.tabuleiro.espelho);
       draw();
       printf("\033[0;31m");
-      wprintf(L"Kaboooom! Você acertou uma bomba! Game Over.\n");
+      puts("Kaboooom! Voce acertou uma bomba! Game Over.");
       printf("\033[0m");
       Jogo.GAME_STATE = GAME_OVER;
     }
@@ -117,7 +115,7 @@ int main()
     {
       draw();
       printf("\033[0;32m");
-      wprintf(L"Parabéns! Você ganhou o jogo!\n");
+      puts("Parabens! Voce ganhou o jogo!");
       printf("\033[0m");
       Jogo.GAME_STATE = GAME_OVER;
     }

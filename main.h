@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <locale.h>
-#include <wchar.h>
 
 #include "defs.h"
 #include "globais.h"
