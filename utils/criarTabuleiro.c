@@ -3,9 +3,6 @@ TABULEIRO criarTabuleiro()
   int i, tamanho;
   TABULEIRO temp;
 
-/*temp.dificuldade = dificuldade;
-  temp.casasAbertas = 0;
-  temp.numJogadas = 0; */
   tamanho = Jogo.dificuldade.tam;
 
   temp.jogavel = (int **)malloc(tamanho * sizeof(int *));

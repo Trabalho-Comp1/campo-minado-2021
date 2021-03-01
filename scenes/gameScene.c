@@ -22,7 +22,7 @@ void renderGameScene(void)
   elementoEspelho = &Jogo.tabuleiro.espelho[linha][coluna];
 
   /* Primeira casa não pode ser bomba */
-/*   if (Jogo.numJogadas == 0 && *elemento == BOMBA)
+  if (Jogo.numJogadas == 0 && *elemento == BOMBA)
   {
     reposicionarMina(linha, coluna);
     verificarCasasAdjacentes();
@@ -30,9 +30,11 @@ void renderGameScene(void)
     *elementoEspelho = CASA_ABERTA;
     Jogo.casasAbertas++;
     revelarCasas(linha, coluna);
+    printf("Casa bomba !");
+
     return;
-  } */
-  if (*elementoEspelho == CASA_ABERTA)
+  }
+  else if (*elementoEspelho == CASA_ABERTA)
   {
     tratarMensagemDeError("Casa ja selecionada!");
     return;

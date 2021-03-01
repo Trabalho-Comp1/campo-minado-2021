@@ -1,7 +1,5 @@
 #include "main.h"
 
-extern DIFICULDADE Facil, Medio, Dificil;
-
 int main()
 {
   setlocale(LC_ALL, "Portuguese");
