@@ -4,14 +4,12 @@
 #include <locale.h>
 #include <wchar.h>
 
-#include "defs.h"
+/* #include "defs.h" */
 #include "globais.h"
+
 #include "./utils/introducao.c"
-#include "./utils/revelarCasas.c"
 #include "./utils/criarTabuleiro.c"
-#include "./utils/popularMatrizCom.c"
 #include "./utils/sortearMinas.c"
-#include "./utils/reposicionarMina.c"
 #include "./utils/verificarCasasAdjacentes.c"
-#include "./utils/draw.c"
-#include "./utils/tratarMensagemDeError.c"
+
+#include "./scenes/gameScene.c"

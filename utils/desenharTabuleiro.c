@@ -1,4 +1,4 @@
-void draw()
+void desenharTabuleiro()
 {
   int linha, coluna;
   system("cls");

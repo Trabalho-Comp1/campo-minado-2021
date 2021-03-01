@@ -4,6 +4,7 @@
 #define FACIL 1
 #define MEDIO 2
 #define DIFICIL 3
+#define EXIT -1
 #define PLAYING 1
 #define GAME_OVER 2
 #define BOMBA -1
