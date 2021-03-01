@@ -1,7 +1,6 @@
-#ifndef GAME_SCENNE_H
-#define GAME_SCENNE_H
+#ifndef GAME_SCENE_H
+#define GAME_SCENE_H
 
-#include "../utils/popularMatrizCom.c"
 #include "../utils/revelarCasas.c"
 #include "../utils/reposicionarMina.c"
 #include "../utils/desenharTabuleiro.c"

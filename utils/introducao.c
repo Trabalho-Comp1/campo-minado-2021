@@ -1,4 +1,6 @@
-void introducao(){
+void introducao()
+{
+    system("cls");
     puts("\n=================== JOGO DO CAMPO DO MINADO ===================\n");
 
     puts("\t\t\t        ,--.!,\n"
