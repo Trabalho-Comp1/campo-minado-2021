@@ -8,9 +8,9 @@ void verificarCasasAdjacentes()
     for (coluna = 0; coluna < tamTabuleiro; coluna++)
     {
       unsigned int bombasProximas = 0;
-      const int celulaCentral = Jogo.tabuleiro.jogavel[linha][coluna];
+      int *celulaCentral = &Jogo.tabuleiro.jogavel[linha][coluna];
 
-      if (celulaCentral == BOMBA)
+      if (*celulaCentral == BOMBA)
       {
         continue;
       }
@@ -33,7 +33,7 @@ void verificarCasasAdjacentes()
           }
         }
       }
-      Jogo.tabuleiro.jogavel[linha][coluna] = bombasProximas;
+      *celulaCentral = bombasProximas;
     }
   }
 }

@@ -1,15 +1,17 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#include "defs.h"
 #include "globais.h"
-#include "./utils/introducao.c"
-#include "./utils/revelarCasas.c"
-#include "./utils/criarTabuleiro.c"
-#include "./utils/popularMatrizCom.c"
-#include "./utils/sortearMinas.c"
-#include "./utils/reposicionarMina.c"
-#include "./utils/verificarCasasAdjacentes.c"
-#include "./utils/draw.c"
-#include "./utils/tratarMensagemDeError.c"
+
+#include "./utils/resetGame.c"
+
+#include "./scenes/menuScene.c"
+#include "./scenes/gameScene.c"
+#include "./scenes/gameOverScene.c"
+#include "./scenes/victoryScene.c"
+
+#endif
