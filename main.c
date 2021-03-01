@@ -4,7 +4,7 @@ extern DIFICULDADE Facil, Medio, Dificil;
 
 int main()
 {
-  char dificuldadeEscolhida;
+  int dificuldadeEscolhida;
   setlocale(LC_ALL, "Portuguese");
   fwide(stdout, 1);
 

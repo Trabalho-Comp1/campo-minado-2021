@@ -1,7 +1,7 @@
 void draw()
 {
   int linha, coluna;
-  printf("\033[1;1H\033[2J"); /*Limpar terminal (teoricamente funciona Linux/Win)*/
+  system("cls");
   
   for (linha = -1; linha < Jogo.dificuldade.tam; linha++)
   {
