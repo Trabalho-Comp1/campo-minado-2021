@@ -7,7 +7,7 @@ void renderGameScene(void)
 
   desenharTabuleiro();
   puts("Digite a LINHA e a COLUNA desejadas. Ex: '0 3'.");
-  wprintf(L"Caso queira marcar/desmarcar a casa, digite um M após a coluna. Ex: '0 3M'.\n");
+  printf("Caso queira marcar/desmarcar a casa, digite um M apos a coluna. Ex: '0 3M'.\n");
   scanf("%i %i%c", &linha, &coluna, &operacao);
 
   /* Verificar se casa escolhida existe */

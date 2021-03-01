@@ -9,10 +9,10 @@ void renderVictoryScene(void)
   desenharTabuleiro();
 
   printf("\033[0;32m");
-  wprintf(L"Parabéns! Você ganhou o jogo!\n");
+  printf("Parabens! Voce ganhou o jogo!\n");
   printf("\033[0m");
 
-  wprintf(L"Deseja continuar jogando ? (S/n)");
+  printf("Deseja continuar jogando ? (S/n)");
   scanf(" %c", &op);
 
   if (op == 'N' || op == 'n')

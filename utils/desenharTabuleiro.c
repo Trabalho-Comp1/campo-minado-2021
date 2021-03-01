@@ -1,7 +1,7 @@
 void desenharTabuleiro()
 {
   int linha, coluna;
-  system("cls");
+  printf("\033[1;1H\033[2J");
   
   for (linha = -1; linha < Jogo.dificuldade.tam; linha++)
   {

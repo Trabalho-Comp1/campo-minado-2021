@@ -2,9 +2,6 @@
 
 int main()
 {
-  setlocale(LC_ALL, "Portuguese");
-  fwide(stdout, 1);
-
   renderMenuScene();
 
   /* Iniciando o jogo */

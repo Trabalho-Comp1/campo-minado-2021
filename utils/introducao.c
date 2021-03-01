@@ -1,6 +1,6 @@
 void introducao()
 {
-    system("cls");
+    printf("\033[1;1H\033[2J");
     puts("\n=================== JOGO DO CAMPO DO MINADO ===================\n");
 
     printf("\t\t\t        ,--.!,\n"

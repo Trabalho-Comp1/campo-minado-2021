@@ -8,10 +8,10 @@ void renderGameOverScene(void)
   desenharTabuleiro();
   
   printf("\033[0;31m");
-  wprintf(L"Kaboooom! Você acertou uma bomba! Game Over.\n");
+  printf("Kaboooom! Voce acertou uma bomba! Game Over.\n");
   printf("\033[0m");
 
-  wprintf(L"Deseja continuar jogando ? (S/n)");
+  printf("Deseja continuar jogando ? (S/n)");
   scanf(" %c", &op);
 
   if (op == 'N' || op == 'n')
