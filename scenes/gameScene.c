@@ -30,7 +30,6 @@ void renderGameScene(void)
     *elementoEspelho = CASA_ABERTA;
     Jogo.casasAbertas++;
     revelarCasas(linha, coluna);
-    printf("Casa bomba !");
 
     return;
   }
