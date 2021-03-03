@@ -1,6 +1,6 @@
 # Relatório
 
-[Link do vídeo]
+[Link do vídeo](https://youtu.be/Es_z0YouXek)
 
 [Apresentação](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
 
