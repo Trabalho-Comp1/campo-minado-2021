@@ -1,7 +1,7 @@
 # Trabalho 1 de Comp 1 2020.1 - Campo Minado
 Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos.
 
-- [Vídeo](https://youtu.be/Es_z0YouXek)
+- [Vídeo](https://youtu.be/aDesnInUEEs)
 
 - [Apresentação utilizada no vídeo](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
 
