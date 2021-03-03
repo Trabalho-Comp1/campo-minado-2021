@@ -1,11 +1,9 @@
 # Trabalho 1 de Comp 1 2020.1 - Campo Minado
-Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos
+Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos.
 
-## Links
+- [Vídeo](https://youtu.be/Es_z0YouXek)
 
-[Vídeo](https://youtu.be/Es_z0YouXek)
-
-[Apresentação utilizada no vídeo](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
+- [Apresentação utilizada no vídeo](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
 
 
 ## Objetivos do trabalho
@@ -78,6 +76,5 @@ Utilizamos o ferramental teórico e prático aprendido ao longo do curso, podend
 
 Utilizamos as bibliotecas básicas stdio.h e stdlib.h. Também utilizamos a biblioteca time.h para gerar um número aleatório na função [sortearMinas](utils/sortearMinas.c).
 
-O código foi desenvolvido de forma colaborativa, parte dele de forma síncrona com o auxílio do [Visual Studio Live Share](https://visualstudio.microsoft.com/pt-br/services/live-share/) e parte de forma assíncrona. Os commits realizados durante as sessões de desenvolvimento síncrono foram todos realizados através do usuário diegomatos321.
-
+O código foi desenvolvido de forma colaborativa, parte dele de forma síncrona com o auxílio do [Visual Studio Live Share](https://visualstudio.microsoft.com/pt-br/services/live-share/) e parte de forma assíncrona.
 
