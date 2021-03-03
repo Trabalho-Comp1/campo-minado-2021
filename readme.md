@@ -1,8 +1,12 @@
-# Relatório
+# Trabalho 1 de Comp 1 2020.1 - Campo Minado
+Desenvolvido por: Abid Lohan, Diego Matos e Lia Barcellos
 
-[Link do vídeo](https://youtu.be/Es_z0YouXek)
+## Links
 
-[Apresentação](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
+[Vídeo](https://youtu.be/Es_z0YouXek)
+
+[Apresentação utilizada no vídeo](https://docs.google.com/presentation/d/1kPYTy1gmCrNahnZGKLKzQmf1kQleZbtqqvQgXkV9lOw/edit?usp=sharing)
+
 
 ## Objetivos do trabalho
 
@@ -12,23 +16,18 @@ Buscamos implementar as funcionalidades básicas do Campo Minado e então increm
 
 ## Premissas consideradas no desenvolvimento do jogo
 
-1ª: O usuário deve escolher a dificuldade. Essa dificuldade altera o tamanho do tabuleiro e a quantidade de bombas distribuídas pelo mesmo.
+- 1ª: O usuário deve escolher a dificuldade. Essa dificuldade altera o tamanho do tabuleiro e a quantidade de bombas distribuídas pelo mesmo.
 
-2ª: Ao selecionar uma casa que possua uma bomba, o usuário perde.
+- 2ª: Ao selecionar uma casa que possua uma bomba, o usuário perde.
 
-3ª: Quando o jogador termina de abrir todas as casas sem bomba, ele ganha.
+- 3ª: Quando o jogador termina de abrir todas as casas sem bomba, ele ganha.
 
-Ao selecionar uma casa ≠ bomba, deve-se mostrar um número que representa a quantidade de bombas que existem em volta; ao selecionar uma casa que tenha o valor 0 — sem nenhuma bomba em volta —, o jogo libera as casas em volta automaticamente;
+- 4ª: Ao selecionar uma casa ≠ bomba, deve-se mostrar um número que representa a quantidade de bombas que existem em volta; ao selecionar uma casa que tenha o valor 0 — sem nenhuma bomba em volta —, o jogo libera as casas em volta automaticamente;
 
-O jogador não pode perder na primeira jogada;
+- 5ª: O jogador não pode perder na primeira jogada;
 
-O jogador deve conseguir marcar uma casa em que ele acredite que tenha uma bomba.
+- 6ª: O jogador deve conseguir marcar uma casa em que ele acredite que tenha uma bomba.
 
-5ª: Ao selecionar uma casa que tenha o valor 0 - nenhuma bomba em volta -, ele libera as casas em volta automaticamente.
-
-6ª: O jogador não pode perder na primeira jogada.
-
-7ª: O jogador pode marcar uma casa, com uma letra diferente, que ele acredite que tenha bomba.
 
 ## Regras
 
@@ -42,11 +41,11 @@ Ao escolher todas as casas sem bomba o jogo acaba e uma mensagem de vitória é 
 
 O objetivo do jogo é conseguir limpar o tabuleiro sem atingir nenhuma bomba.
 
+
 ## Saída da execução
 
-A saída é em formato textual no terminal e o jogo se redesenha a cada movimento realizado, mantendo o terminal limpo.
+A saída é em formato textual no terminal e o jogo se redesenha a cada movimento realizado, mantendo o terminal limpo. Abaixo, alguns prints que mostram o funcionamento do jogo:
 
-(Adicionar prints? Tela inicial, escolhendo a dificuldade; tela de meio jogo, selecionando uma casa; tela final, mostrando vitória.)
 
 ### Tela inicial
 
@@ -68,20 +67,17 @@ A saída é em formato textual no terminal e o jogo se redesenha a cada moviment
 
 ![Tela Final - Vitória](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-vitoria.png)
 
-## Tela - Derrota
+### Tela final - Derrota
 
 ![Tela - Derrota](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-derrota.png)
 
+
 ## Ferramentas utilizadas
 
-Utilizamos várias ferramentas aprendidas ao longo do curso, podendo citar: Elaboração de algoritmos, uso de variáveis e constantes, funções de entrada e saída pelo console, operadores em geral, estruturas condicionais e de repetição, funções, ponteiros e estruturas.
+Utilizamos o ferramental teórico e prático aprendido ao longo do curso, podendo citar os seguintes conceitos: Elaboração de algoritmos, uso de variáveis e constantes, funções de entrada e saída pelo console, operadores em geral, estruturas condicionais e de repetição, funções, ponteiros, estruturas e modularização.
 
-Também utilizamos algumas bibliotecas:
+Utilizamos as bibliotecas básicas stdio.h e stdlib.h. Também utilizamos a biblioteca time.h para gerar um número aleatório na função [sortearMinas](utils/sortearMinas.c).
 
-locale.h: usada para alterar a região;
+O código foi desenvolvido de forma colaborativa, parte dele de forma síncrona com o auxílio do [Visual Studio Live Share](https://visualstudio.microsoft.com/pt-br/services/live-share/) e parte de forma assíncrona. Os commits realizados durante as sessões de desenvolvimento síncrono foram todos realizados através do usuário diegomatos321.
 
-wchar.h: usada para ampliar o conjunto de caracteres;
 
-time.h: 
-
-Além das bibliotecas básicas stdio.h e stdlib.h.
