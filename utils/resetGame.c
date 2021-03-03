@@ -1,5 +1,4 @@
-#include "../utils/sortearMinas.c"
-#include "../utils/verificarCasasAdjacentes.c"
+#include "resetGame.h"
 
 void resetGame(void)
 {
