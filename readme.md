@@ -50,23 +50,23 @@ A saída é em formato textual no terminal e o jogo se redesenha a cada moviment
 
 ### Tela inicial
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b66707a7-0035-4023-ab97-8c25a0736657/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b66707a7-0035-4023-ab97-8c25a0736657/Untitled.png)
+![Tela Inicial](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-inicial.png)
 
 ### Tela de meio jogo 1
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e1542743-aa36-45cd-b2e0-a55e2f0c359a/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e1542743-aa36-45cd-b2e0-a55e2f0c359a/Untitled.png)
+![Tela de Meio de Jogo 1](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-meio-jogo-1.png)
 
 ### Tela de meio jogo 2
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/917cf48e-2222-4ed9-a2de-5f95ad6deb76/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/917cf48e-2222-4ed9-a2de-5f95ad6deb76/Untitled.png)
+![Tela de Meio de Jogo 2](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-meio-jogo-2.png)
 
 ### Tela de meio jogo 3
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5becf92-017e-4780-82b3-099fdcf51cae/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5becf92-017e-4780-82b3-099fdcf51cae/Untitled.png)
+![Tela de Meio de Jogo 3](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-meio-jogo-3.png)
 
 ### Tela final - Vitória
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/245200d4-024a-46d5-ba74-7ee1a6db4565/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/245200d4-024a-46d5-ba74-7ee1a6db4565/Untitled.png)
+![Tela Final - Vitória](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-vitoria.png)
 
 ## Ferramentas utilizadas
 
