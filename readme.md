@@ -68,6 +68,10 @@ A saída é em formato textual no terminal e o jogo se redesenha a cada moviment
 
 ![Tela Final - Vitória](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-vitoria.png)
 
+## Tela - Derrota
+
+![Tela - Derrota](https://github.com/Trabalho-Comp1/campo-minado-2021/blob/master/images/tela-derrota.png)
+
 ## Ferramentas utilizadas
 
 Utilizamos várias ferramentas aprendidas ao longo do curso, podendo citar: Elaboração de algoritmos, uso de variáveis e constantes, funções de entrada e saída pelo console, operadores em geral, estruturas condicionais e de repetição, funções, ponteiros e estruturas.
