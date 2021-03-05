@@ -78,3 +78,7 @@ Utilizamos as bibliotecas básicas stdio.h e stdlib.h. Também utilizamos a bibl
 
 O código foi desenvolvido de forma colaborativa, parte dele de forma síncrona com o auxílio do [Visual Studio Live Share](https://visualstudio.microsoft.com/pt-br/services/live-share/) e parte de forma assíncrona.
 
+Para compilar o código do jogo:
+```
+gcc -o build main.c globais.c -Wall -ansi -pedantic
+```
